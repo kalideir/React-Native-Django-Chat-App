@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ASGI_APPLICATION = 'api.routing.application'
+ASGI_APPLICATION = "api.asgi.application"
 
 CHANNEL_LAYERS = {
     'default': {
