@@ -1,4 +1,4 @@
-# React-Native-Django-Chat-App
+# React-Native-Django-Chat-App [incomplete + ongoing]
 A small chat app built using Django and React Native for 1-1 or 1-* chat rooms
 
 ## Technologies in use:
