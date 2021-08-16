@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3.1"
 
 services:
   db:
@@ -9,26 +9,24 @@ services:
       - POSTGRES_DB=chatapp
     ports:
       - "5432"
-    volumes:
-      - dbdata:/var/lib/postgresql/data:delegated
 
   redis:
-    image: "redis:alpine"
+    restart: always
+    image: redis:latest
+    ports:
+      - "6379:6379"
 
-  backend:
-    build:
-      dockerfile: backend/Dockerfile
-      context: .
+  web:
+    build: .
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
     ports:
       - "8000:8000"
     volumes:
       - ./:/home/user/app/
-    env_file: backend/.env
     depends_on:
       - db
       - redis
-
-volumes:
-  dbdata:
-    external:
-      name: backend_dbdata
+    dns:
+      - 8.8.8.8

@@ -9,7 +9,7 @@ from users.models import User
 
 class Chatroom(Model): # Chatroom == Group == one-to-one | on-to-many users
     name = TextField(max_length=150)
-    users = ManyToManyField(User, on_delete=CASCADE, verbose_name='recipients', related_name='recipients')
+    users = ManyToManyField(User, verbose_name='recipients', related_name='recipients')
     timestamp = DateTimeField('timestamp', auto_now_add=True, editable=False)
 
     def __str__(self):

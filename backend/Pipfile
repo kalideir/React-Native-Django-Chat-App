@@ -9,8 +9,15 @@ channels = "*"
 decouple = "*"
 dj-rest-auth = "*"
 djangorestframework-simplejwt = "*"
+django-allauth = "*"
 
 [dev-packages]
+
+[scripts]
+server = "python manage.py runserver 0.0.0.0:8000"
+makemigrations = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
+csu = "python manage.py createsuperuser"
 
 [requires]
 python_version = "3.8"
