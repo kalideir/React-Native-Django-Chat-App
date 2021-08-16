@@ -3,14 +3,14 @@ A small chat app built using Django and React Native for 1-1 or 1-* chat rooms
 
 ## Technologies in use:
 ### Django
-- Python  3.8
+- Python 3.8
 - Channels
 - PostgreSQL
 - PyTest
+- Docker
 
 ### App
 - React Native
 - TypeScript
-- Redux && Redux ToolKit
-- React Query
+- Redux && Redux ToolKit && Saga
 - Gifted Chat
