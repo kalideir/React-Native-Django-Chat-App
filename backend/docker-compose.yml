@@ -1,0 +1,34 @@
+version: '3.1'
+
+services:
+  db:
+    image: "postgres:alpine"
+    environment:
+      - POSTGRES_USER=chatapp
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=chatapp
+    ports:
+      - "5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data:delegated
+
+  redis:
+    image: "redis:alpine"
+
+  backend:
+    build:
+      dockerfile: backend/Dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/home/user/app/
+    env_file: backend/.env
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  dbdata:
+    external:
+      name: backend_dbdata
