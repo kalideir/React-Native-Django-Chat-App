@@ -1,32 +1,14 @@
-from .models import Chatroom, Message
+from .models import User
 from rest_framework import serializers
-from users.models import User
 
 
-class UserMessageSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
+    profileImage = serializers.ImageField(use_url=False, allow_null=True)
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'avatar', 'fullName']
+        fields = ('fullName', 'email', 'createdAt', 'updatedAt', 'profileImage')
 
+    def create(self, validated_data):
+         return User.objects.create(**validated_data)
 
-
-class ChatroomSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Chatroom
-        fields = ['id', 'name', 'recipients']
-    
-    def to_representation(self, instance):
-        data = super(ChatroomSerializer, self).to_representation(instance)
-        return data['name'] 
-
-
-class MessageSerializer(serializers.ModelSerializer):
-    chatroom = ChatroomSerializer(read_only=True)
-    user = UserMessageSerializer(read_only=True)
-
-    class Meta:
-        model = Message
-        fields = ['id', 'name', 'chatroom', 'user', 'message', 'timestamp']
-    

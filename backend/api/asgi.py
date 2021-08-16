@@ -1,15 +1,15 @@
-  
 import os
-import django
-from decouple import config
 
 from channels.auth import AuthMiddlewareStack
+from channels.routing import ProtocolTypeRouter, URLRouter
+from django.core.asgi import get_asgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", f'{config("PROJECT_NAME")}.settings')
+import chat.routing
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatty.settings')
+
 
 django.setup()
-
-from channels.routing import ProtocolTypeRouter, URLRouter
 
 from channels.security.websocket import AllowedHostsOriginValidator, OriginValidator
 import chat.routing as ChatRouting
@@ -21,9 +21,10 @@ routes = ChatRouting.websocket_urlpatterns
 
 
 application = ProtocolTypeRouter({
-    "websocket": AuthMiddlewareStack(
-        URLRouter(
-            routes
-        )
-    ),
+  "http": get_asgi_application(),
+  "websocket": AuthMiddlewareStack(
+    URLRouter(
+      routes
+    )
+  )
 })
