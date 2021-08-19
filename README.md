@@ -14,3 +14,4 @@ A small chat app built using Django and React Native for 1-1 or 1-* chat rooms
 - TypeScript
 - Redux && Redux ToolKit && Saga
 - Gifted Chat
+- Formik && Yup
