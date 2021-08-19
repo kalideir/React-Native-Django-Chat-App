@@ -1,4 +1,4 @@
 const colors = {
-}
+};
   
-  export default colors;
+export default colors;
