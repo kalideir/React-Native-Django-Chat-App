@@ -22,9 +22,10 @@ routes = ChatRouting.websocket_urlpatterns
 
 
 application = ProtocolTypeRouter({
-    "websocket": AuthMiddlewareStack(
+    "websocket": 
+    # AuthMiddlewareStack(
         URLRouter(
             routes
         )
-    ),
+    # ),
 })

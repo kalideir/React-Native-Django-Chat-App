@@ -11,6 +11,7 @@ dj-rest-auth = "*"
 djangorestframework-simplejwt = "*"
 django-allauth = "*"
 daphne = "*"
+channels-redis = "*"
 
 [dev-packages]
 
