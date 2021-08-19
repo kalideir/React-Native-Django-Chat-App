@@ -10,6 +10,7 @@ decouple = "*"
 dj-rest-auth = "*"
 djangorestframework-simplejwt = "*"
 django-allauth = "*"
+daphne = "*"
 
 [dev-packages]
 

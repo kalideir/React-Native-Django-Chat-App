@@ -15,16 +15,22 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
+    # command: ["redis-server", "--bind", "redis", "--port", "6379"]
 
   web:
     build: .
-    restart: unless-stopped
+    command: daphne -b 0.0.0.0 -p 8000 api.asgi:application
+    restart: always
     tty: true
     stdin_open: true
+    expose:
+      - 8000
+      - 8001
     ports:
       - "8000:8000"
     volumes:
       - ./:/home/user/app/
+      - .:/code
     depends_on:
       - db
       - redis

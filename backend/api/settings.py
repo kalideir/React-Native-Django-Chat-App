@@ -169,12 +169,12 @@ SITE_ID = 1
 
 
 REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'users.serializers.CustomDetailSerializer',
-    'PASSWORD_RESET_SERIALIZER': 'users.serializers.CustomRegisterSerializer',
+    'USER_DETAILS_SERIALIZER': 'users.serializers.UserSerializer',
+    'PASSWORD_RESET_SERIALIZER': 'users.serializers.UserSerializer',
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'users.serializers.CustomRegisterSerializer',
+    'REGISTER_SERIALIZER': 'users.serializers.UserSerializer',
 }
 
 ACCOUNT_ADAPTER = 'users.adapters.CustomAccountAdapter'

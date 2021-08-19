@@ -1,4 +1,3 @@
-from django.urls import url, path
 from django.urls import path, include
 from rest_framework import routers
 from .views import UserViewSet
@@ -9,6 +8,6 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path(r'', include(router.urls)),
-    url(r'^account/', include('allauth.urls')),
+    path(r'^account/', include('allauth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
 ]

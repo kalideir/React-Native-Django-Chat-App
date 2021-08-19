@@ -13,5 +13,4 @@ COPY . .
 
 RUN python3 manage.py makemigrations && python3 manage.py migrate
 
-USER user
-CMD gunicorn api.wsgi --log-file - -b 0.0.0.0:8000 --reload
+USER root
