@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-48u_d$96=^-gltu4^)_zx*-48y$4w$=-c*jp6dvh#bkj5s+@cg
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+CORS_ORIGIN_ALLOW_ALL = True 
+CORS_ALLOW_CREDENTIALS = True
+ALLOWED_HOSTS = ['*', '0.0.0.0']
 
 
 # Application definition
@@ -90,6 +91,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'chatapp',
+#         'USER': 'chatapp',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
 
 
 # Password validation
@@ -170,12 +183,12 @@ SITE_ID = 1
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'users.serializers.UserSerializer',
-    'PASSWORD_RESET_SERIALIZER': 'users.serializers.UserSerializer',
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'users.serializers.UserSerializer',
+    'REGISTER_SERIALIZER': 'users.serializers.CustomRegisterSerializer',
 }
+
 
 ACCOUNT_ADAPTER = 'users.adapters.CustomAccountAdapter'
 AUTH_USER_MODEL = 'users.User'

@@ -1,4 +1,4 @@
-from .models import Chatroom, Message
+from .models import Chatroom, Message, Request
 from rest_framework import serializers
 from users.models import User
 
@@ -7,8 +7,7 @@ class UserMessageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'avatar', 'fullName']
-
+        fields = ['id', 'username', 'avatar', 'full_name']
 
 
 class ChatroomSerializer(serializers.ModelSerializer):
@@ -22,11 +21,19 @@ class ChatroomSerializer(serializers.ModelSerializer):
         return data['name'] 
 
 
+
+class RequestSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Request
+        fields = '__all__'
+    
+
 class MessageSerializer(serializers.ModelSerializer):
     chatroom = ChatroomSerializer(read_only=True)
     user = UserMessageSerializer(read_only=True)
-
+ 
     class Meta:
         model = Message
-        fields = ['id', 'name', 'chatroom', 'user', 'message', 'timestamp']
+        fields = ['id', 'name', 'chatroom', 'user', 'message']
     

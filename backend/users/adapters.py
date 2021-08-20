@@ -7,7 +7,7 @@ class CustomAccountAdapter(DefaultAccountAdapter):
         user = super().save_user(request, user, form, commit)
         print(user)
         data = form.cleaned_data
-        user.firstName = data.get('fullName')
-        user.username = data.get('username')
+        user.firstName = data.get('full_name')
+        user.username = data.get('username') 
         user.save()
         return user

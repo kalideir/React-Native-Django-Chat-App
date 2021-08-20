@@ -30,7 +30,6 @@ services:
       - "8000:8000"
     volumes:
       - ./:/home/user/app/
-      - .:/code
     depends_on:
       - db
       - redis

@@ -6,5 +6,5 @@ from rest_framework.permissions import IsAdminUser
 
 class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminUser]
-    queryset = User.objects.all().order_by('-createdAt')
+    queryset = User.objects.all().order_by('-created_at')
     serializer_class = UserSerializer

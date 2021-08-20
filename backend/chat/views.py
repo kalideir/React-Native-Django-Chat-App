@@ -11,7 +11,7 @@ import json
 
 class ChatroomViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
-    queryset = Chatroom.objects.all().order_by('timestamp')
+    queryset = Chatroom.objects.all()
     serializer_class = ChatroomSerializer
 
     @action(methods=['get'], detail=True, url_path='chat-history')
@@ -23,12 +23,13 @@ class ChatroomViewSet(viewsets.ModelViewSet):
 
     @action(methods=['patch'], detail=True, url_path='exit')
     def exit_chatroom(self, request, pk=None): 
-        chatroom = self.get_object()
+        chatroom = self.get_object()   
+
         user = request.user
-        return Response({})
+        return Response({}) 
 
 
 class MessageViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
-    queryset = Message.objects.all().order_by('timestamp')
+    queryset = Message.objects.all()
     serializer_class = MessageSerializer
