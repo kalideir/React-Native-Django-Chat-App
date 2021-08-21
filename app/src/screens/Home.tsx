@@ -1,14 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { HeaderAction } from '../components/shared';
+import { HomeHeader as Header, History } from '../components/home';
 import Screen from '../containers/Screen';
+import { HorizontalPadding } from '../components/shared';
+import { useTheme } from 'react-native-paper';
+
 
 const Home = () : JSX.Element =>  {
+  const theme =  useTheme();
+
   return (
-    <Screen>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
+    <Screen background={theme.colors.primary}>
+      <Header title="Home" action1={<HeaderAction icon="magnify" action={() => {}} />} />
+      <View style={[styles.container]}>
+        <HorizontalPadding>
+          <History /> 
+        </HorizontalPadding>
       </View>
     </Screen>
   );
@@ -17,9 +25,7 @@ const Home = () : JSX.Element =>  {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'white'
   },
 });
 

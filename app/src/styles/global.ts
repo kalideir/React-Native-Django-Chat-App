@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { darkColors } from '../themes/colors';
 import { StatusBarHeight } from '../utils/status-bar';
 
 export const safeAreaViewPadding = StatusBarHeight;
@@ -6,6 +7,7 @@ export const safeAreaViewPadding = StatusBarHeight;
 const globalStyles = StyleSheet.create({
   flex: {
     flex: 1,
+    backgroundColor: darkColors.primary
   },
   screenTitle: {
     fontSize: 18,

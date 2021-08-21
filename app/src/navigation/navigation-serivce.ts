@@ -8,11 +8,11 @@ interface Iparams {
     [key : string] : [value : unknown]
 }
 
-function navigate(name: string, params?: Iparams) : void {
+const navigate = (name: string, params?: Iparams) : void => {
   navigationRef.current?.navigate(name, params);
 }
 
-function goBack() : void{
+const goBack = () : void => {
   navigationRef.current?.goBack();
 }
 
