@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Screen from '../containers/Screen';
 
-const Requests = () : JSX.Element =>  {
+const Profile = () : JSX.Element =>  {
   return (
     <Screen>
       <View style={styles.container}>
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Requests;
+export default Profile;
