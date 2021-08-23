@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
@@ -16,8 +15,7 @@ const Header = ({title, subtitle} : IProps) : JSX.Element => {
   return (
     <Appbar.Header style={styles.container}>
       <Appbar.Content title={title} subtitle={subtitle || ''} />
-      <Appbar.Action icon="magnify" onPress={_handleSearch} />
-      <Appbar.Action icon="dots-vertical" onPress={_handleMore} />
+      <Appbar.Action icon="dots-horizontal" onPress={_handleMore} />
     </Appbar.Header>
   );
 };

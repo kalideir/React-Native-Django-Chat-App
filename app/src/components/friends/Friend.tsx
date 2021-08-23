@@ -6,7 +6,6 @@ import { Avatar } from 'react-native-paper';
 import { height, width } from '../../constants';
 import globalStyles from '../../styles/global';
 import Icon from '../../themes/icons';
-import { HorizontalPadding } from '../shared';
 import { Title } from '../typography';
 
 
@@ -27,21 +26,19 @@ const Friend = ({item} : IProps) : JSX.Element => {
   const theme = useTheme();
   const styles = makeStyles(theme.colors);
   return (
-    <HorizontalPadding spacing={10}>
-      <View style={[styles.container, globalStyles.rcfs]}>
-        <View style={styles.left}>
-          <Avatar.Image size={width * 0.10} source={{uri: item.avatar}} />
-        </View>
-        <View style={[styles.center, globalStyles.rcsb]}>
-          <Title>{`${item.first_name} ${item.last_name}`}</Title>
-        </View>
-        <View style={styles.right}>
-          <TouchableRipple onPress={() => {}}>
-            <Icon color={theme.colors.primary} size={24} type="feather" name="more-horizontal" />
-          </TouchableRipple>
-        </View>
+    <View style={[styles.container, globalStyles.rcfs]}>
+      <View style={styles.left}>
+        <Avatar.Image size={width * 0.10} source={{uri: item.avatar}} />
       </View>
-    </HorizontalPadding>
+      <View style={[styles.center, globalStyles.rcsb]}>
+        <Title>{`${item.first_name} ${item.last_name}`}</Title>
+      </View>
+      <View style={styles.right}>
+        <TouchableRipple onPress={() => {}}>
+          <Icon color={theme.colors.primary} size={24} type="feather" name="more-horizontal" />
+        </TouchableRipple>
+      </View>
+    </View>
   )
 };
 
@@ -55,14 +52,15 @@ const makeStyles = (colors) => StyleSheet.create({
   },
   left: {
     width: width * 0.10,
-    marginRight: width * 0.025
+    marginRight: width * 0.025,
+    paddingLeft: 5
   }, 
   center: {
     flex: 1,
     paddingRight: 10
   },
   right: {
-
+    paddingRight: 5
   }
 })
 

@@ -2,16 +2,17 @@
 import * as React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 import Record from './Record';
+import history from './data';
 
 
 const History = () : JSX.Element => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={[1, 2, 3, 4, 5, 6]}
+        data={history}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(_, index) => index.toString()}
-        renderItem={({item}) => <Record />}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({item}) => <Record item={item} />}
       />
     </View>
   )

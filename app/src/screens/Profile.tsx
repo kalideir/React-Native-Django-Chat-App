@@ -1,15 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import { Info, ProfileHeader as Header } from '../components/profile';
+import { useTheme } from 'react-native-paper';
 import Screen from '../containers/Screen';
 
 const Profile = () : JSX.Element =>  {
+  const theme =  useTheme();
+
   return (
-    <Screen>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+    <Screen background={theme.colors.primary}>
+      <Header title="Profile" />
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
+        <Info />
+      </ScrollView>
     </Screen>
   );
 }
@@ -17,9 +20,6 @@ const Profile = () : JSX.Element =>  {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 

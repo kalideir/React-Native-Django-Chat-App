@@ -6,32 +6,42 @@ import { TouchableRipple, useTheme } from 'react-native-paper';
 import { Avatar } from 'react-native-paper';
 import { height, width } from '../../constants';
 import globalStyles from '../../styles/global';
-import { Divider, HorizontalPadding } from '../shared';
+import { Divider } from '../shared';
 import { Footer, Secondary, Title } from '../typography';
 
+type IItem = {
+  id: number,
+  fullName: string,
+  avatar: string,
+  date: string,
+  message: string
+}
 
-const Record = () : JSX.Element => {
+interface IProps {
+  item: IItem
+}
+
+
+const Record = ({item} : IProps) : JSX.Element => {
   const theme = useTheme();
   const styles = makeStyles(theme.colors);
   return (
     <TouchableRipple onPress={() => {}}>
-      <HorizontalPadding spacing={10}>
-        <View style={[styles.container, globalStyles.rcfs]}>
-          <View style={styles.left}>
-            <Avatar.Image size={width * 0.10} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgSljH79mLE4arfUoYGRWV23SGYA6JjrmcVQ&usqp=CAU'}} />
+      <View style={[styles.container, globalStyles.rcfs]}>
+        <View style={styles.left}>
+          <Avatar.Image size={width * 0.10} source={{uri: item.avatar}} />
+        </View>
+        <View style={[styles.center]}>
+          <View style={[styles.header, globalStyles.rcsb]}>
+            <Title>{item.fullName}</Title>
+            <Secondary>{moment(item.date).format('dddd HH:MM')}</Secondary>
           </View>
-          <View style={[styles.center]}>
-            <View style={[styles.header, globalStyles.rcsb]}>
-              <Title>Full name</Title>
-              <Secondary>{moment().format('dddd HH:MM')}</Secondary>
-            </View>
-            <Divider />
-            <View style={styles.message}>
-              <Footer>{'lorem ipsum message which is highly readable'}</Footer>
-            </View>
+          <Divider />
+          <View style={styles.message}>
+            <Footer>{item.message.substring(0, 60)}</Footer>
           </View>
         </View>
-      </HorizontalPadding>
+      </View>
     </TouchableRipple>
   )
 };
@@ -39,8 +49,8 @@ const Record = () : JSX.Element => {
 const makeStyles = (colors) => StyleSheet.create({
   container: {
     height: height * 0.1,
+    paddingHorizontal: 10,
     width: '100%',
-    marginBottom: height * 0.004,
     backgroundColor: colors.surface,
     borderBottomColor: colors.disabled,
     borderBottomWidth: 1

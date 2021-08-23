@@ -2,17 +2,13 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
-import goBack from '../../navigation/navigation-serivce';
 
 interface IProps {
   title: string,
   subtitle?: string,
-  back?: boolean,
-  action1?: JSX.Element,
-  action2?: JSX.Element,
 }
 
-const Header = ({title, subtitle, back, action1, action2} : IProps) : JSX.Element => {
+const Header = ({title, subtitle} : IProps) : JSX.Element => {
 
   const _handleSearch = () => console.log('Searching');
 

@@ -17,7 +17,7 @@ const BottomTabs =() : JSX.Element => {
   const theme = useTheme();
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Profile"
       tabBarOptions={{
         style: {
           height: height * 0.08,

@@ -22,11 +22,11 @@ const Section = ({children, style} : IProps) : JSX.Element => {
   const theme = useTheme();
   const styles = makeStyles(theme.colors);
   return (
-    <HorizontalPadding spacing={10}>
-      <View style={[styles.container, globalStyles.rcfs, style]}>
+    <View style={[styles.container, globalStyles.rcfs, style]}>
+      <HorizontalPadding spacing={10}>
         <Title>{children}</Title>
-      </View>
-    </HorizontalPadding>
+      </HorizontalPadding>
+    </View>
   )
 };
 
@@ -35,7 +35,7 @@ const makeStyles = (colors) => StyleSheet.create({
     height: height * 0.05,
     width: '100%',
     marginBottom: height * 0.004,
-    backgroundColor: colors.placeholder,
+    backgroundColor: colors.background,
     borderBottomColor: colors.disabled,
     borderBottomWidth: 1
   },
