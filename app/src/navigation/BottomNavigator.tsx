@@ -46,7 +46,7 @@ const BottomTabs =() : JSX.Element => {
         options={{
           tabBarIcon: ({ focused }) => (
             <Icon
-              type="fontawesome"
+              type="feather"
               name="users"
               size={19}
               color={focused ? theme.colors.primary : '#111'}
@@ -60,7 +60,7 @@ const BottomTabs =() : JSX.Element => {
         options={{
           tabBarIcon: ({ focused }) => (
             <Icon
-              type="ant"
+              type="feather"
               name="user"
               size={19}
               color={focused ? theme.colors.primary : '#111'}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import BottomNavigator from './BottomNavigator';
-import {Chat, Search} from '../screens';
+import AuthenticatedNavigation from './AuthenticatedNavigation';
 
 const RootStack = createStackNavigator(); 
 
@@ -10,25 +9,14 @@ const RootNavigation = () : JSX.Element => {
   return ( 
     <RootStack.Navigator
       mode="modal"
-      initialRouteName="BottomNavigator"
+      initialRouteName="AuthenticatedNavigation"
       screenOptions={{ headerShown: false }}
     >
       <RootStack.Screen
-        name="BottomNavigator"
-        component={BottomNavigator}
+        name="AuthenticatedNavigation"
+        component={AuthenticatedNavigation}
         options={{ headerShown: false }}
       />
-      <RootStack.Screen
-        name="Chat"
-        component={Chat}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name="Search"
-        component={Search}
-        options={{ headerShown: false }}
-      />
-
     </RootStack.Navigator>
   );
 };

@@ -14,12 +14,9 @@ export const ICON_TYPE = {
 };
 
 type IStyle = {
-  margin?: number | string,
-  marginLeft?: number | string,
-  marginRight?: number | string,
-  marginBottom?: number | string,
-  marginTop?: number | string,
+  [style : string] : unknown
 }
+
 
 interface ICustomIcon {
   type: string,

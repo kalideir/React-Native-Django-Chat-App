@@ -9,7 +9,8 @@ export const darkColors = {
 export const lightColors = {
   primary: '#577df4',
   accent: '#fff',
-  surface: '#eeeff1',
+  surface: '#fff',
   background: '#f8f8f8',
   black: '#111',
+  placeholder: '#f8f8f8'
 };

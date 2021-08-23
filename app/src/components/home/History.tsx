@@ -9,6 +9,7 @@ const History = () : JSX.Element => {
     <View style={styles.container}>
       <FlatList
         data={[1, 2, 3, 4, 5, 6]}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({item}) => <Record />}
       />

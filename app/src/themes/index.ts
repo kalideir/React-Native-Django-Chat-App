@@ -1,3 +1,5 @@
+import {darkColors, lightColors} from './colors';
+
 import {
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
@@ -13,6 +15,7 @@ export const CombinedDefaultTheme = {
   colors: {
     ...PaperDefaultTheme.colors,
     ...NavigationDefaultTheme.colors,
+    ...lightColors
   },
 };
 export const CombinedDarkTheme = {
@@ -21,8 +24,10 @@ export const CombinedDarkTheme = {
   colors: {
     ...PaperDarkTheme.colors,
     ...NavigationDarkTheme.colors,
+    ...darkColors
   },
 };
 
 export * from './themeContext';
 export * from './spacing';
+export * from './typography';

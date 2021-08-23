@@ -1,18 +1,18 @@
 import React from 'react';
 import {View} from 'react-native'
-import { ScreenSpacing } from '../../themes';
 
 interface IProps {
-    children: JSX.Element[] | JSX.Element
+    children: JSX.Element[] | JSX.Element,
+    spacing?: number | string
 }
 
-const HorizontalPadding = ({children} : IProps) : JSX.Element => {
+const HorizontalPadding = ({children, spacing} : IProps) : JSX.Element => {
   const style = {
     flex: 1,
-    paddingHorizontal: ScreenSpacing
+    paddingHorizontal: spacing
   }
   return (
-    <View style={style}>
+    <View style={[style]}>
       {children}
     </View>
   )
