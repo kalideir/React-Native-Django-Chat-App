@@ -5,6 +5,7 @@ import { StyleSheet, View } from 'react-native';
 import { TouchableRipple, useTheme } from 'react-native-paper';
 import { Avatar } from 'react-native-paper';
 import { height, width } from '../../constants';
+import {navigate} from '../../navigation/navigation-serivce';
 import globalStyles from '../../styles/global';
 import { Divider } from '../shared';
 import { Footer, Secondary, Title } from '../typography';
@@ -26,7 +27,7 @@ const Record = ({item} : IProps) : JSX.Element => {
   const theme = useTheme();
   const styles = makeStyles(theme.colors);
   return (
-    <TouchableRipple onPress={() => {}}>
+    <TouchableRipple onPress={() => navigate('Chat')}>
       <View style={[styles.container, globalStyles.rcfs]}>
         <View style={styles.left}>
           <Avatar.Image size={width * 0.10} source={{uri: item.avatar}} />

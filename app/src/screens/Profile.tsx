@@ -10,7 +10,7 @@ const Profile = () : JSX.Element =>  {
   return (
     <Screen background={theme.colors.primary}>
       <Header title="Profile" />
-      <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.container} contentContainerStyle={{backgroundColor: theme.colors.background}}>
         <Info />
       </ScrollView>
     </Screen>

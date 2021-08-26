@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { TouchableRipple, useTheme } from 'react-native-paper';
 import { Avatar } from 'react-native-paper';
 import { height, width } from '../../constants';
+import { navigate } from '../../navigation/navigation-serivce';
 import globalStyles from '../../styles/global';
 import Icon from '../../themes/icons';
 import { Title } from '../typography';
@@ -26,19 +27,21 @@ const Friend = ({item} : IProps) : JSX.Element => {
   const theme = useTheme();
   const styles = makeStyles(theme.colors);
   return (
-    <View style={[styles.container, globalStyles.rcfs]}>
-      <View style={styles.left}>
-        <Avatar.Image size={width * 0.10} source={{uri: item.avatar}} />
+    <TouchableRipple onPress={() => navigate('Chat')}>
+      <View style={[styles.container, globalStyles.rcfs]}>
+        <View style={styles.left}>
+          <Avatar.Image size={width * 0.10} source={{uri: item.avatar}} />
+        </View>
+        <View style={[styles.center, globalStyles.rcsb]}>
+          <Title>{`${item.first_name} ${item.last_name}`}</Title>
+        </View>
+        <View style={styles.right}>
+          <TouchableRipple onPress={() => {}}>
+            <Icon color={theme.colors.primary} size={24} type="feather" name="more-horizontal" />
+          </TouchableRipple>
+        </View>
       </View>
-      <View style={[styles.center, globalStyles.rcsb]}>
-        <Title>{`${item.first_name} ${item.last_name}`}</Title>
-      </View>
-      <View style={styles.right}>
-        <TouchableRipple onPress={() => {}}>
-          <Icon color={theme.colors.primary} size={24} type="feather" name="more-horizontal" />
-        </TouchableRipple>
-      </View>
-    </View>
+    </TouchableRipple>
   )
 };
 

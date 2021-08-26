@@ -1,8 +1,8 @@
 export const darkColors = {
   primary: '#1a60ed',
-  accent: '#eeeff1',
-  surface: '#f8f8f8',
-  background: '#fff',
+  accent: '#232323',
+  surface: '#444',
+  background: '#222',
   black: '#111',
 };
 

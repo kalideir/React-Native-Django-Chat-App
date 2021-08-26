@@ -16,7 +16,7 @@ const goBack = () : void => {
   navigationRef.current?.goBack();
 }
 
-export default {
+export {
   navigate,
   goBack,
 };

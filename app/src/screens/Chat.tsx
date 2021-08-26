@@ -1,14 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { useTheme } from 'react-native-paper';
 import Screen from '../containers/Screen';
+import {Chat as ChatComponent, Header}  from '../components/chat';
+
 
 const Chat = () : JSX.Element =>  {
+
+  const theme = useTheme();
   return (
-    <Screen>
+    <Screen background={theme.colors.primary}>
+      <Header title="Chat" subtitle="Contact name" />
       <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
+        <ChatComponent />
       </View>
     </Screen>
   );
@@ -17,9 +21,7 @@ const Chat = () : JSX.Element =>  {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#222',
   },
 });
 

@@ -11,7 +11,6 @@ const globalStyles = StyleSheet.create({
   },
   screenTitle: {
     fontSize: 18,
-    color: 'white',
   },
   rcc: {
     flexDirection: 'row',

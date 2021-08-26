@@ -17,7 +17,7 @@ const BottomTabs =() : JSX.Element => {
   const theme = useTheme();
   return (
     <Tab.Navigator
-      initialRouteName="Profile"
+      initialRouteName="Home"
       tabBarOptions={{
         style: {
           height: height * 0.08,
@@ -34,7 +34,7 @@ const BottomTabs =() : JSX.Element => {
             <Icon
               type="ant"
               name="home"
-              size={19}
+              size={22}
               color={focused ? theme.colors.primary : '#111'}
             />
           ),
@@ -48,7 +48,7 @@ const BottomTabs =() : JSX.Element => {
             <Icon
               type="feather"
               name="users"
-              size={19}
+              size={22}
               color={focused ? theme.colors.primary : '#111'}
             />
           ),
@@ -62,7 +62,7 @@ const BottomTabs =() : JSX.Element => {
             <Icon
               type="feather"
               name="user"
-              size={19}
+              size={22}
               color={focused ? theme.colors.primary : '#111'}
             />
           ),
