@@ -1,0 +1,53 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject ",
+    "lint": "eslint --ext .tsx --ext .ts src/ --fix",
+    "format": "prettier --check ./src"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.4",
+    "@react-navigation/bottom-tabs": "^5.11.11",
+    "@react-navigation/material-bottom-tabs": "^5.3.10",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "@reduxjs/toolkit": "^1.6.1",
+    "expo": "~42.0.1",
+    "expo-status-bar": "~1.0.4",
+    "moment": "^2.29.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-gifted-chat": "^0.16.3",
+    "react-native-paper": "^4.9.2",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "~3.4.0",
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-web": "~0.13.12",
+    "react-redux": "^7.2.4",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@types/react": "~16.9.35",
+    "@types/react-native": "~0.63.2",
+    "@types/react-native-vector-icons": "^6.4.8",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.2",
+    "typescript": "~4.0.0"
+  },
+  "private": true
+}
